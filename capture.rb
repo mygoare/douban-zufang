@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 
 require "open-uri"
 require "uri"
 
 douban_url = URI.escape("http://www.douban.com/group/search?group=146409&cat=1013&q=静安")
-t = Time.now
+t = Time.new(2013,9,12)
 
 open(douban_url) { |f|
   content = f.read()
