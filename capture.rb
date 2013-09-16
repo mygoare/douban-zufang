@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 # encoding: utf-8
 
 require "open-uri"
@@ -13,5 +12,9 @@ open(douban_url) { |f|
 
   links = links.select { |link| link =~ (Regexp.new t.strftime("%Y-%m-%d")) }
 
-  puts links
+  links.each do |link|
+    title = /title="([\s\S]*?)">[^<\d]/.match(link)
+    date = /\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d/.match(link)
+    print title, "  ---  ", date, "\n\n"
+  end
 }
