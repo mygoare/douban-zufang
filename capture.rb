@@ -13,8 +13,9 @@ open(douban_url) { |f|
   links = links.select { |link| link =~ (Regexp.new t.strftime("%Y-%m-%d")) }
 
   links.each do |link|
-    title = /title="([\s\S]*?)">[^<\d]/.match(link)
-    date = /\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d/.match(link)
-    print title, "  ---  ", date, "\n\n"
+    href = /<a class="" href="(.*)" title="(.*)">/.match(link)[1]
+    title = /<a class="" href="(.*)" title="(.*)">/.match(link)[2]
+    date = /\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/.match(link)
+    print href, "  -  ", title, "  -  ", date, "\n\n"
   end
 }
