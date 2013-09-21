@@ -1,3 +1,5 @@
-###program capture zufang-SH info from douban, filter the content, send email when updated.
+###About
 
-###May Sergey Li like it.
+* Capture zufang-SH info from douban
+* Filter the content
+* <del>Send email when updated</del>
