@@ -3,3 +3,5 @@
 
 \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}   帖子时间
 <a class="" href="(.*)" title="(.*)">  分别匹配出了link和title
+
+It should be OOP.
